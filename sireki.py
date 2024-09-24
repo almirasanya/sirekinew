@@ -2,7 +2,7 @@ import os
 import json
 
 # Ambil dari environment variable
-credentials_json = os.environ['CREDENTIALS_JSON']
+credentials_json = os.environ['GOOGLE_CREDENTIALS']
 
 # Simpan ke file
 with open('credentials.json', 'w') as f:
