@@ -27,6 +27,6 @@ jobs:
       # Step 4: Jalankan aplikasi
       - name: Run Application
         run: |
-          python your_script.py  # Ganti dengan perintah untuk menjalankan aplikasi Anda
+          python sireki.py  # Ganti dengan perintah untuk menjalankan aplikasi Anda
         env:
           GOOGLE_APPLICATION_CREDENTIALS: $HOME/credentials.json
