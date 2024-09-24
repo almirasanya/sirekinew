@@ -23,8 +23,14 @@ jobs:
       - name: Set GOOGLE_APPLICATION_CREDENTIALS
         run: |
           export GOOGLE_APPLICATION_CREDENTIALS=$HOME/credentials.json
+      
+      # Step 4: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Pastikan ini ada
 
-      # Step 4: Jalankan aplikasi
+      # Step 5: Jalankan aplikasi
       - name: Run Application
         run: |
           python sireki.py  # Ganti dengan perintah untuk menjalankan aplikasi Anda
