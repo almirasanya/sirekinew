@@ -13,6 +13,11 @@ jobs:
       # Step 1: Checkout kode dari repository
       - name: Checkout code
         uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'  # Ganti dengan versi yang Anda inginkan
 
       # Step 2: Membuat file credentials.json dari GitHub Secret
       - name: Set up Google Credentials
