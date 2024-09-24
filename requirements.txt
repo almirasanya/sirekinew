@@ -6,4 +6,3 @@ pandas
 streamlit
 plotly
 schedule
-os
