@@ -1,5 +1,14 @@
-import requests
+import os
 import json
+
+# Ambil dari environment variable
+credentials_json = os.environ['CREDENTIALS_JSON']
+
+# Simpan ke file
+with open('credentials.json', 'w') as f:
+    f.write(credentials_json)
+
+import requests
 from datetime import datetime, timedelta
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
