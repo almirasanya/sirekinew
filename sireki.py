@@ -326,7 +326,7 @@ def upload_to_google_sheets(df, worksheet):
         st.success("Data berhasil disimpan ke Google Sheets!")
 
         # Menjadwalkan pengiriman reminder setiap hari pukul 00:00
-        schedule.every().day.at("13:00").do(run_reminders, sheet)
+        schedule.every().day.at("16:05").do(run_reminders, sheet)
 
         # Menjalankan scheduler di thread terpisah
         def run_scheduler():
