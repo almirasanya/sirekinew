@@ -1,13 +1,5 @@
 import os
 import json
-
-# Ambil dari environment variable
-credentials_json = os.environ['GOOGLE_CREDENTIALS']
-
-# Simpan ke file
-with open('credentials.json', 'w') as f:
-    f.write(credentials_json)
-
 import requests
 from datetime import datetime, timedelta
 import gspread
