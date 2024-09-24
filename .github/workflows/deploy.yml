@@ -1,0 +1,32 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout kode dari repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Membuat file credentials.json dari GitHub Secret
+      - name: Set up Google Credentials
+        run: |
+          echo "${{ secrets.GOOGLE_CREDENTIALS }}" > $HOME/credentials.json
+
+      # Step 3: Mengatur variabel lingkungan
+      - name: Set GOOGLE_APPLICATION_CREDENTIALS
+        run: |
+          export GOOGLE_APPLICATION_CREDENTIALS=$HOME/credentials.json
+
+      # Step 4: Jalankan aplikasi
+      - name: Run Application
+        run: |
+          python your_script.py  # Ganti dengan perintah untuk menjalankan aplikasi Anda
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: $HOME/credentials.json
